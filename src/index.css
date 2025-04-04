@@ -3,8 +3,8 @@ html {
   font-size: 16px;
   line-height: 1.5;
   font-weight: 400;
-  background-color: #290A50;
-  color: #d1c9d9;
+  background-color: #F1F8E9;
+  color: #000;
 }
 
 a {
@@ -19,7 +19,7 @@ a:hover {
 
 
 h1 {
-  font-size: 3.2rem;
+  font-size: 6rem;
   line-height: 1.1;
 }
 

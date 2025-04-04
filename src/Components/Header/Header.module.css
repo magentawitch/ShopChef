@@ -1,0 +1,16 @@
+.logo {
+    font-family: "Caveat";
+    font-weight: 600;
+    color: #517D54;
+    text-shadow: 4px 4px 2px #1d311e;
+    padding: 1rem;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 4rem;
+  }
+
