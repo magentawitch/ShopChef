@@ -1,4 +1,5 @@
 import Header from "./Components/Header/Header";
+import RecipeForm from "./Components/RecipeForm/RecipeForm";
 
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
   return (
     <>
       <Header />
+      <RecipeForm />
     </>
   )
 }
