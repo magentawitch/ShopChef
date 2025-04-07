@@ -1,0 +1,64 @@
+.form {
+    background-color: #FFFFFF;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px #0000000d;
+    max-width: 500px;
+    margin: 2rem auto;
+    display: flex;
+    gap: 1.2rem;
+    flex-direction: column;
+  }
+  
+  .input {
+    font-family: "Open Sans";
+    padding: 0.75rem 1rem;
+    border-radius: 0.6rem;
+    border: 1px solid #CED6C5;
+    font-size: 1rem;
+    background-color: #FAFBF9;
+    transition: border-color 0.2s ease;
+  }
+  
+  .input:focus {
+    outline: none;
+    border-color: #8DAA91;
+    box-shadow: 0 0 0 2px #8daa9133;
+  }
+
+  .textArea {
+    font-family: "Open Sans";
+    padding: 0.75rem 1rem;
+    max-width: 29.125rem;
+    max-height: 8rem;
+    border-radius: 0.6rem;
+    border: 1px solid #CED6C5;
+    font-size: 1rem;
+    background-color: #FAFBF9;
+    transition: border-color 0.2s ease;
+  }
+
+  .textArea:focus {
+    outline: none;
+    border-color: #8DAA91;
+    box-shadow: 0 0 0 2px #8daa9133;
+  }
+  
+  .submitButton {
+    background-color: #8DAA91;
+    color: #FFFFFF;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .submitButton:hover {
+    background-color: #78947C;
+  }
+  
+ .submitButton:active {
+    background-color: #5F7C66;
+  }
