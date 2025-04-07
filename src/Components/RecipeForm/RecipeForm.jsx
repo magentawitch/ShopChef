@@ -42,8 +42,8 @@ function RecipeForm() {
             <input className={styles.input} type="text" placeholder="Recipe Name" value={title} onChange={({ target }) => setTitle(target.value)} />
             <div className={styles.ingredient}>
                 <input className={styles.inputNumber} type="text" placeholder="2" value={ingredientAmount} onChange={({ target }) => setIngredientAmount(target.value)} />
-                <select className={styles.inputSelect} value={ingredientUnit} onChange={({ target }) => setIngredientUnit(target.value)} >
-                    <option selected hidden>Choose</option>
+                <select className={styles.inputSelect} value={ingredientUnit} onChange={({ target }) => setIngredientUnit(target.value)} required >
+                    <option value="" disabled selected hidden>Choose</option>
                     <option value="units">Units</option>
                     <option value="cups">Cups</option>
                     <option value="tsp">Tsp</option>
