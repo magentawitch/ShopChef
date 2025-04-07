@@ -7,20 +7,26 @@ import styles from "./RecipeForm.module.css";
 function RecipeForm() {
     const { addRecipe, addIngredient, ingredientsList } = useContext(RecipeContext);
     const [title, setTitle] = useState("");
-    const [ingredient, setIngredient] = useState("");
+
+    const [ingredientName, setIngredientName] = useState("");
+    const [ingredientAmount, setIngredientAmount] = useState("");
+    const [ingredientUnit, setIngredientUnit] = useState("");
+
     const [instructions, setInstructions] = useState("");
 
     useEffect(() => {
         console.log("Updated list:", ingredientsList);
-      }, [ingredientsList]);
+    }, [ingredientsList]);
 
     const handleKeyDown = event => {
         if (event.key === "Enter") {
             event.preventDefault()
-            if (ingredient.trim() !== "")
-            addIngredient(ingredient);
+            if (ingredientName.trim() !== "" && ingredientAmount.trim() !== "")
+                addIngredient({ name: ingredientName, amount: ingredientAmount, unit: ingredientUnit });
             console.log(`This is the ingredient List: ${ingredientsList}`);
-            setIngredient("");
+            setIngredientName("");
+            setIngredientAmount("");
+            setIngredientUnit("");
         }
     }
 
@@ -33,18 +39,33 @@ function RecipeForm() {
 
     return (
         <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
-            <input className={styles.input} type="text" placeholder="Recipe Name" value={title} onChange={({target}) => setTitle(target.value)} />
-            <input className={styles.input} type="text" placeholder="Ingredients" value={ingredient} onChange={({target}) => setIngredient(target.value)} onKeyDown={handleKeyDown} />
-            <div>
-            {ingredientsList.map((ingredient, i) => 
-                <Ingredient 
-                key={i} 
-                index={i}
-                name={ingredient} 
-                />
-            )}
+            <input className={styles.input} type="text" placeholder="Recipe Name" value={title} onChange={({ target }) => setTitle(target.value)} />
+            <div className={styles.ingredient}>
+                <input className={styles.inputNumber} type="text" placeholder="2" value={ingredientAmount} onChange={({ target }) => setIngredientAmount(target.value)} />
+                <select className={styles.inputSelect} value={ingredientUnit} onChange={({ target }) => setIngredientUnit(target.value)} >
+                    <option selected hidden>Choose</option>
+                    <option value="units">Units</option>
+                    <option value="cups">Cups</option>
+                    <option value="tsp">Tsp</option>
+                    <option value="tbsp">Tbsp</option>
+                    <option value="gr">Gr</option>
+                    <option value="Kg">Kg</option>
+                </select>
+                <input className={styles.input} type="text" placeholder="Ingredients" value={ingredientName} onChange={({ target }) => setIngredientName(target.value)} onKeyDown={handleKeyDown} />
             </div>
-            <textarea className={styles.textArea} placeholder="Instructions" value={instructions} onChange={({target}) => setInstructions(target.value)} />
+
+            <div>
+                {ingredientsList.map((ingredient, i) =>
+                    <Ingredient
+                        key={i}
+                        index={i}
+                        name={ingredient.name}
+                        amount={ingredient.amount}
+                        unit={ingredient.unit}
+                    />
+                )}
+            </div>
+            <textarea className={styles.textArea} placeholder="Instructions" value={instructions} onChange={({ target }) => setInstructions(target.value)} />
             <button className={styles.submitButton} type="submit" onClick={handleClick} >Add Recipe</button>
         </form>
     )
