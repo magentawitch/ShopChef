@@ -12,18 +12,13 @@ function RecipeForm() {
     const [ingredientAmount, setIngredientAmount] = useState("");
     const [ingredientUnit, setIngredientUnit] = useState("");
 
-    const [instructions, setInstructions] = useState("");
-
-    useEffect(() => {
-        console.log("Updated list:", ingredientsList);
-    }, [ingredientsList]);
+    const [instructions, setInstructions] = useState(""); 
 
     const handleKeyDown = event => {
         if (event.key === "Enter") {
             event.preventDefault()
             if (ingredientName.trim() !== "" && ingredientAmount.trim() !== "")
                 addIngredient({ name: ingredientName, amount: ingredientAmount, unit: ingredientUnit });
-            console.log(`This is the ingredient List: ${ingredientsList}`);
             setIngredientName("");
             setIngredientAmount("");
             setIngredientUnit("");
