@@ -1,0 +1,55 @@
+/* NavBar */
+.nav {
+    background-color: #ffffff;
+    padding: 1.25rem 0;
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 2rem;
+  }
+
+  .navList {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    list-style: none;
+  }
+  
+  .navList a {
+    font-family: 'Open Sans', sans-serif;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: #4C4A3E;
+    font-weight: 500;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  .navList a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 1px;
+    width: 100%;
+    background-color: #8DAA91;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.6;
+  }
+  
+  .navList a:hover::after {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  
+  .navList a:hover {
+    color: #6E8872;
+  }
+  
+  .active {
+    color: #8DAA91;
+    font-weight: 600;
+  }
