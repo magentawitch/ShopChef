@@ -1,5 +1,4 @@
-import React from "react";
-import { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import RecipeContext from "../../Context/RecipeContext";
 import Ingredient from "../Ingredient/Ingredient";
 import styles from "./RecipeForm.module.css";
