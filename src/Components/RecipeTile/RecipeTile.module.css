@@ -14,15 +14,25 @@
 }
 
 .titleContainer {
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 0.5rem;
     border-bottom: 2px solid #3D4F3A;
 }
 
 .title {
+    margin: 0;
     font-weight: 600;
+    font-size: 1.1rem;
     color: #435A47;
+    letter-spacing: 0.5px;
     text-shadow: 0.5px 0.5px 1px #1d311e;
+}
+
+.addButton {
+    margin: 0;
+    padding: .25rem .75rem;
 }
 
 .ingredientsContainer {
