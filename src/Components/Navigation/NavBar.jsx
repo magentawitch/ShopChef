@@ -9,12 +9,18 @@ function NavBar() {
                 <li>
                     <NavLink to="/"
                         className={({ isActive }) => isActive ? styles.active : undefined}>
+                        Home
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink to="/new-recipe"
+                        className={({ isActive }) => isActive ? styles.active : undefined}>
                         New Recipe
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/recipes" 
-                    className={({ isActive }) => isActive ? styles.active : undefined}>
+                    <NavLink to="/recipes"
+                        className={({ isActive }) => isActive ? styles.active : undefined}>
                         My Recipes
                     </NavLink>
                 </li>
