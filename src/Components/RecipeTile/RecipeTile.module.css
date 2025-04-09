@@ -1,0 +1,46 @@
+/* Recipe Tile */
+
+.tileContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px #0000000d;
+    width: 260px;
+    height: 150px;
+    margin: 2rem auto;
+    display: flex;
+}
+
+.titleContainer {
+    display: block;
+    padding: 0.5rem;
+    border-bottom: 2px solid #3D4F3A;
+}
+
+.title {
+    font-weight: 600;
+    color: #435A47;
+    text-shadow: 0.5px 0.5px 1px #1d311e;
+}
+
+.ingredientsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #60695f #787f7800;
+    margin-top: 1rem;
+}
+
+.ingredient {
+    display: inline-flex;
+    text-align: center;
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    background-color: #EAF1E4;
+    color: #3D4F3A;
+    margin: 0.2rem;
+    box-shadow: 0 1px 3px #0000000d;
+}
