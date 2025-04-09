@@ -9,7 +9,7 @@ export const RecipeProvider = ({ children }) => {
 
 
     const addRecipe = (title, ingredients, instructions) => {
-        setRecipes([...recipes, { title: title, ingredients: ingredients, instructions: instructions }]);
+        setRecipes((prev) => [...prev, { title: title, ingredients: ingredients, instructions: instructions }]);
         setIngredientsList([]);
     }
 
@@ -21,8 +21,17 @@ export const RecipeProvider = ({ children }) => {
         setIngredientsList((prev) => prev.filter((_, i) => i !== indexToRemove));
     };
 
+    const selectRecipe = recipeIndex => {
+        setSelectedRecipes((prev) => [...prev, recipes[recipeIndex]])
+        console.log(selectedRecipes);
+    }
+
+    const removeRecipe = indexToRemove => {
+        setSelectedRecipes((prev) => prev.filter((_, i) => i !== indexToRemove));
+    }
+
     return (
-        <RecipeContext.Provider value={{ recipes, addRecipe, ingredientsList, addIngredient, removeIngredient }}>
+        <RecipeContext.Provider value={{ recipes, addRecipe, ingredientsList, addIngredient, removeIngredient, selectedRecipes, selectRecipe, removeRecipe }}>
             {children}
         </RecipeContext.Provider>
     );
