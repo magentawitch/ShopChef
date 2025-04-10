@@ -4,7 +4,7 @@ import RecipeTile from "../RecipeTile/RecipeTile";
 import styles from "./BatchCookingList.module.css"
 
 function BatchCookingList() {
-    const {selectedRecipes, removeRecipe} = useContext(RecipeContext);
+    const { selectedRecipes, removeRecipe } = useContext(RecipeContext);
 
     const handleClick = index => {
         removeRecipe(index);
@@ -12,17 +12,20 @@ function BatchCookingList() {
 
     return (
         <div className={styles.recipesContainer}>
-            <div className={styles.recipe}>
-                {selectedRecipes.map((recipe, i) =>
-                <RecipeTile 
-                key={i}
-                icon="-"
-                title={recipe.title}
-                ingredients={recipe.ingredients}
-                onClick={() => handleClick(i)}
-                />
-                )}
-            </div>
+            {selectedRecipes.length === 0 ? (
+                <p className={styles.emptyText}>No batch cooking recipes selected 🌱</p>
+            ) : (
+                <div className={styles.recipe}>
+                    {selectedRecipes.map((recipe, i) =>
+                        <RecipeTile
+                            key={i}
+                            icon="–"
+                            title={recipe.title}
+                            ingredients={recipe.ingredients}
+                            onClick={() => handleClick(i)}
+                        />
+                    )}
+                </div>)}
         </div>
     )
 }
