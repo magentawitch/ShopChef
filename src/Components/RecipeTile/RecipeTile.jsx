@@ -12,7 +12,7 @@ function RecipeTile({ title, ingredients, icon, onClick }) {
             </div>
             <div className={styles.ingredientsContainer}>
                 {ingredients.map((ingredient, i) =>
-                    <p key={i} className={styles.ingredient}>{ingredient}</p>
+                    <p key={i} className={styles.ingredient}>{ingredient.name}</p>
                 )}
             </div>
 
