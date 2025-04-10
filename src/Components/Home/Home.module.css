@@ -1,0 +1,56 @@
+/* Home */
+
+.mainContainer {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    padding: 3rem 2rem;
+}
+
+.sectionContainer {
+    position: relative;
+    width: 700px;
+  }
+  
+  .washi {
+    position: absolute;
+    top: -1rem;
+    left: 1rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 1.2rem;
+    font-family: "Gloria Hallelujah", cursive;
+    font-weight: bolder;
+    color: #2F2D26;
+    transform: rotate(-3deg);
+    z-index: 2;
+    background-color: #fef8ee;
+    background-size: cover;
+    background-repeat: repeat;
+    border-radius: 0.4rem;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+    opacity: 0.95;
+  }
+  
+
+  .dots {
+    background-image: radial-gradient(#C8B6A6 1.5px, transparent 1.5px);
+    background-size: 10px 10px;
+  }
+  
+  .plaid {
+    background-image: repeating-linear-gradient(
+        45deg,
+        #C8B6A6 0,
+        #C8B6A6 1px,
+        transparent 3px,
+        transparent 15px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        #C8B6A6 0,
+        #C8B6A6 1px,
+        transparent 3px,
+        transparent 15px
+      );
+  }
+  
