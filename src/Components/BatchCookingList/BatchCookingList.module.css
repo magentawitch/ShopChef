@@ -2,7 +2,15 @@
 
 .recipesContainer {
     display: flex;
-    margin: auto 3rem;
+    justify-content: center;
+    padding: 1rem 2rem;
+    margin: auto;
+    background-color: #fffefc;
+    border: 2px dashed #d6cfc4;
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 8px rgba(211, 204, 192, 0.3);
+    width: 700px;
+    height: 500px;
 }
 
 .recipe {
@@ -10,4 +18,14 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 1.5rem;
+}
+
+.emptyText {
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: #6e8872;
+    text-align: center;
+    margin-top: 2rem;
+    opacity: 0.8;
 }
