@@ -17,7 +17,7 @@ function RecipeForm() {
         if (event.key === "Enter") {
             event.preventDefault()
             if (ingredientName.trim() !== "" && ingredientAmount.trim() !== "")
-                addIngredient({ name: ingredientName, amount: ingredientAmount, unit: ingredientUnit });
+                addIngredient({ name: ingredientName.toLowerCase(), amount: ingredientAmount, unit: ingredientUnit });
             setIngredientName("");
             setIngredientAmount("");
             setIngredientUnit("");
