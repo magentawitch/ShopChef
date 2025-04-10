@@ -1,0 +1,80 @@
+/* Shopping List */
+
+.ingredientListContainer {
+    background-color: #fffefb;
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 10px #0000000d;
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    font-family: 'Nunito', sans-serif;
+}
+
+.emptyText {
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: #6e8872;
+    text-align: center;
+    margin-top: 2rem;
+    opacity: 0.8;
+}
+
+.ingredientItemContainer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ingredient {
+    border-bottom: 1px dashed #d9e3d5;
+    padding: 0.75rem 0;
+    font-size: 1rem;
+    color: #3D4F3A;
+    display: flex;
+    align-items: center;
+}
+
+
+.hiddenCheckbox {
+    display: none;
+}
+
+
+.customCheckbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    gap: 1rem;
+}
+
+.styledCheckbox {
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid #90a88f;
+    border-radius: 0.25rem;
+    background-color: #fff;
+    flex-shrink: 0;
+    position: relative;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+
+.hiddenCheckbox:checked + .styledCheckbox {
+    background-color: #90a88f;
+    border-color: #6e8e6e;
+}
+
+.hiddenCheckbox:checked + .styledCheckbox::after {
+    content: "";
+    position: absolute;
+    left: 0.25rem;
+    top: 0.05rem;
+    width: 0.25rem;
+    height: 0.5rem;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
