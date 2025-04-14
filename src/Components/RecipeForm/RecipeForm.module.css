@@ -1,7 +1,8 @@
 .form {
-    background-color: #FFFFFF;
+    background-color: #fffefb;
     padding: 2rem;
-    border-radius: 1rem;
+    border-radius: 1.5rem;
+    border: 2px dashed #EADBD1;
     box-shadow: 0 4px 10px #0000000d;
     max-width: 500px;
     margin: 2rem auto;
@@ -13,20 +14,20 @@
   .ingredient {
     display: flex;
     flex-wrap: wrap;
-    
   }
 
   .input, 
   .inputNumber, 
   .inputSelect {
     font-family: "Open Sans";
-    padding: 0.75rem .5rem;
+    padding: 0.65rem .75rem;
     margin: auto 0.25rem;
-    border-radius: 0.6rem;
-    border: 1px solid #CED6C5;
+    border-radius: 0.8rem;
+    border: 1px solid #E0CFC2;
     font-size: 1rem;
-    background-color: #FAFBF9;
+    background-color: #faf7f3;
     transition: border-color 0.2s ease;
+    color: #4C4A3E;
   }
 
   .input {
@@ -47,8 +48,8 @@
   .inputNumber:focus, 
   .inputSelect:focus {
     outline: none;
-    border-color: #8DAA91;
-    box-shadow: 0 0 0 2px #8daa9133;
+    border-color: #D7BBAE;
+    box-shadow: 0 0 0 2px #e7d7cc88;
   }
 
   .inputSelect:invalid {
@@ -59,17 +60,18 @@
     font-family: "Open Sans";
     padding: 0.75rem 1rem;
     resize: none;
-    border-radius: 0.6rem;
-    border: 1px solid #CED6C5;
+    border-radius: 0.8rem;
+    border: 1px solid #E0CFC2;
     font-size: 1rem;
-    background-color: #FAFBF9;
+    background-color: #faf7f3;
     transition: border-color 0.2s ease;
+    color: #4C4A3E;
   }
 
   .textArea:focus {
     outline: none;
-    border-color: #8DAA91;
-    box-shadow: 0 0 0 2px #8daa9133;
+    border-color: #D7BBAE;
+    box-shadow: 0 0 0 2px #e7d7cc88;
   }
   
   .submitButton {
