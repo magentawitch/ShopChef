@@ -6,19 +6,21 @@
     align-items: center;
     padding: 0.4rem 0.8rem;
     border-radius: 999px;
-    background-color: #EAF1E4;
-    color: #3D4F3A;
+    background-color: #D9E4DC;
+    color: #5C5A4D;
+    border: 1px solid #D8E4D3;
+    box-shadow: 1px 1px 0 #C2D1C3;
+    font-size: 0.9rem;
     margin: 0.2rem;
-    box-shadow: 0 1px 3px #0000000d;
 }
 
 
 .removeButton {
-    padding: 0.05rem;
+    padding: 0.1rem 0.4rem;
     background-color: transparent;
     box-shadow: none;
     border: none;
-    color: #6D8371;
+    color: #556B5B;
     font-size: 1rem;
     margin: 0.2rem 0.2rem 0.2rem 0.5rem;
     transition: color 0.2s ease;
@@ -26,9 +28,16 @@
 
 .removeButton:hover {
     background-color: transparent;
+    box-shadow: none;
     border: none;
-    color: #4E5F4B;
+    color: #3D4F3A;
     font-size: 1rem;
     margin: 0.2rem 0.2rem 0.2rem 0.5rem;
     transition: color 0.2s ease;
+}
+
+.removeButton:active {
+    background-color: transparent;
+    transform: none;
+    box-shadow: none;
 }
