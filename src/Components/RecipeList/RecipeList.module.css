@@ -2,7 +2,7 @@
 
 .recipesContainer {
     display: flex;
-    margin: auto 3rem;
+    margin: 2rem 3rem;
 }
 
 .recipe {
