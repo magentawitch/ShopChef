@@ -4,6 +4,7 @@
     background-color: #fffefb;
     border-radius: 2rem;
     padding: 1rem 2rem;
+    border: 2px dashed #d6cfc4;
     box-shadow: 0 4px 10px #0000000d;
     width: 500px;
     height: 500px;
@@ -12,9 +13,8 @@
 }
 
 .emptyText {
-    font-family: 'Gloria Hallelujah', cursive;
-    font-size: 1.25rem;
-    font-style: italic;
+    font-family: 'Open sans', sans-serif;
+    font-size: 1rem;
     color: #6e8872;
     text-align: center;
     margin-top: 2rem;
@@ -24,7 +24,7 @@
 .ingredientItemContainer ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 1.5rem 0;
 }
 
 .ingredient {
@@ -35,7 +35,6 @@
     display: flex;
     align-items: center;
 }
-
 
 .hiddenCheckbox {
     display: none;
