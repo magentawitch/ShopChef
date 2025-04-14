@@ -11,21 +11,23 @@ function BatchCookingList() {
     }
 
     return (
-        <div className={styles.recipesContainer}>
-            {selectedRecipes.length === 0 ? (
-                <p className={styles.emptyText}>No batch cooking recipes selected 🌱</p>
-            ) : (
-                <div className={styles.recipe}>
-                    {selectedRecipes.map((recipe, i) =>
-                        <RecipeTile
-                            key={i}
-                            icon="–"
-                            title={recipe.title}
-                            ingredients={recipe.ingredients}
-                            onClick={() => handleClick(i)}
-                        />
-                    )}
-                </div>)}
+        <div className={styles.mainContainer}>
+            <div className={styles.recipesContainer}>
+                {selectedRecipes.length === 0 ? (
+                    <p className={styles.emptyText}>No batch cooking recipes selected 🌱</p>
+                ) : (
+                    <div className={styles.recipe}>
+                        {selectedRecipes.map((recipe, i) =>
+                            <RecipeTile
+                                key={i}
+                                icon="–"
+                                title={recipe.title}
+                                ingredients={recipe.ingredients}
+                                onClick={() => handleClick(i)}
+                            />
+                        )}
+                    </div>)}
+            </div>
         </div>
     )
 }

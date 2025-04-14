@@ -1,29 +1,40 @@
 /* Batch Cooking List */
 
-.recipesContainer {
-    display: flex;
-    justify-content: center;
-    padding: 1rem 2rem;
+.mainContainer {
+    width: auto;
+    height: auto;
+    overflow: hidden;
     margin: auto;
     background-color: #fffefc;
     border: 2px dashed #d6cfc4;
     border-radius: 1.5rem;
     box-shadow: 0 4px 8px rgba(211, 204, 192, 0.3);
-    width: 700px;
+}
+
+.recipesContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #D7BBAE #ffffff00;
+    padding: 1rem;
+    width: 650px;
     height: 500px;
 }
 
 .recipe {
     display: flex;
     justify-content: center;
+    align-content: center;
     flex-wrap: wrap;
     gap: 1.5rem;
 }
 
 .emptyText {
-    font-family: 'Gloria Hallelujah', cursive;
-    font-size: 1.25rem;
-    font-style: italic;
+    font-family: 'Open sans', sans-serif;
+    font-size: 1rem;
     color: #6e8872;
     text-align: center;
     margin-top: 2rem;
