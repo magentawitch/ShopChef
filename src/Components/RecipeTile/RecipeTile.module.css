@@ -3,44 +3,54 @@
 .tileContainer {
     display: flex;
     flex-direction: column;
-    background-color: #FFFFFF;
+    background-color: #fffefb;
     padding: 1rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 10px #0000000d;
-    width: 260px;
-    height: 150px;
-    margin: 2rem auto;
+    border-radius: 1.25rem;
+    box-shadow: 0 .25rem .625rem #0000000d;
+    width: 16.25rem;
+    height: 10.5rem;
+    margin: 0.5rem;
     display: flex;
+    transition: transform 0.2s ease;
+}
+
+.tileContainer:hover {
+    transform: translateY(-2px);
 }
 
 .titleContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem;
-    border-bottom: 2px solid #3D4F3A;
+    padding: 0.5rem 0.75rem;
+    border-bottom: 2px dashed #D7BBAE;
 }
+
 
 .title {
     margin: 0;
     font-weight: 600;
-    font-size: 1.1rem;
-    color: #435A47;
+    font-size: 1.15rem;
+    color: #6E5E55;
     letter-spacing: 0.5px;
-    text-shadow: 0.5px 0.5px 1px #1d311e;
+
 }
 
 .addButton {
     margin: 0;
     padding: .25rem .75rem;
+    border-radius: 999px;
+    cursor: pointer;
+
 }
 
 .ingredientsContainer {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     overflow-y: scroll;
     scrollbar-width: thin;
-    scrollbar-color: #60695f #787f7800;
+    scrollbar-color: #D7BBAE #ffffff00;
     margin-top: 1rem;
 }
 
@@ -49,8 +59,10 @@
     text-align: center;
     padding: 0.4rem 0.8rem;
     border-radius: 999px;
-    background-color: #EAF1E4;
-    color: #3D4F3A;
+    background-color: #FFFBF7;
+    color: #4C4A3E;
+    border: 1px solid #EADBD1;
+    font-size: 0.9rem;
     margin: 0.2rem;
-    box-shadow: 0 1px 3px #0000000d;
+    box-shadow: 1px 1px 0 #D7BBAE;
 }
