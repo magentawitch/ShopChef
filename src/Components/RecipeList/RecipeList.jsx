@@ -1,13 +1,19 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import RecipeContext from "../../Context/RecipeContext";
 import RecipeTile from "../RecipeTile/RecipeTile";
 import styles from "./RecipeList.module.css";
 
 function RecipeList() {
     const { recipes, selectRecipe } = useContext(RecipeContext);
+    const [clickedIndex, setClickedIndex] = useState("");
+
 
     const handleClick = index => {
         selectRecipe(index);
+        setClickedIndex(index);
+        setTimeout(() => {
+            setClickedIndex(null);
+        }, 1000)
     }
 
     return (
@@ -16,10 +22,11 @@ function RecipeList() {
                 {recipes.map((recipe, i) =>
                     <RecipeTile
                         key={i}
-                        icon="+"
+                        icon={clickedIndex === i? "Added" : "+"}
                         title={recipe.title}
                         ingredients={recipe.ingredients}
-                        onClick={() =>{handleClick(i)}}
+                        isClicked={i === clickedIndex}
+                        onClick={() => {handleClick(i)}}
                     />
                 )}
             </div>
