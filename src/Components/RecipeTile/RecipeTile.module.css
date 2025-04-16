@@ -1,4 +1,4 @@
-/* Recipe Tile */
+/* RECIPE TILE */
 
 .tileContainer {
     display: flex;
@@ -36,17 +36,6 @@
 
 }
 
-.addButton {
-    margin: 0;
-    padding: .25rem .75rem;
-    border-radius: 999px;
-    cursor: pointer;
-}
-
-.clicked {
-    animation: addButtonClicked 100ms ease forwards;
-}
-
 
 .ingredientsContainer {
     display: flex;
@@ -70,6 +59,26 @@
     margin: 0.2rem;
     box-shadow: 1px 1px 0 #D7BBAE;
 }
+
+
+/* Button */
+
+.addButton {
+    margin: 0;
+    padding: .25rem .75rem;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.clicked {
+    animation: addButtonClicked 100ms ease forwards;
+}
+
+.addButton:disabled {
+    pointer-events: none;
+    box-shadow: none;
+    transform: none;
+  }
 
 @keyframes addButtonClicked {
     0% {

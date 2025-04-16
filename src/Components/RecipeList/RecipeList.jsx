@@ -6,13 +6,16 @@ import styles from "./RecipeList.module.css";
 function RecipeList() {
     const { recipes, selectRecipe } = useContext(RecipeContext);
     const [clickedIndex, setClickedIndex] = useState("");
+    const [isDisabled, setIsDisabled] = useState(false);
 
 
     const handleClick = index => {
         selectRecipe(index);
         setClickedIndex(index);
+        setIsDisabled(true);
         setTimeout(() => {
             setClickedIndex(null);
+            setIsDisabled(false);
         }, 1000)
     }
 
@@ -26,6 +29,7 @@ function RecipeList() {
                         title={recipe.title}
                         ingredients={recipe.ingredients}
                         isClicked={i === clickedIndex}
+                        isDisabled={i === clickedIndex? isDisabled : false}
                         onClick={() => {handleClick(i)}}
                     />
                 )}
