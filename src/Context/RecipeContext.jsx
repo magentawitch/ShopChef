@@ -1,12 +1,22 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 const RecipeContext = createContext();
 
 export const RecipeProvider = ({ children }) => {
-    const [recipes, setRecipes] = useState([]);
+    const [recipes, setRecipes] = useState(() => {
+        const storedRecipes = localStorage.getItem("recipes");
+        return storedRecipes ? JSON.parse(storedRecipes) : [];
+    });
     const [selectedRecipes, setSelectedRecipes] = useState([]);
     const [ingredientsList, setIngredientsList] = useState([]);
 
+    useEffect(() => {
+        console.log(`These are the selected Recipes: ${selectedRecipes}`);
+    }, [selectedRecipes])
+
+    useEffect(() => {
+        localStorage.setItem("recipes", JSON.stringify(recipes));
+    }, [recipes]);
 
     const addRecipe = (title, ingredients, instructions) => {
         setRecipes((prev) => [...prev, { title: title, ingredients: ingredients, instructions: instructions }]);
