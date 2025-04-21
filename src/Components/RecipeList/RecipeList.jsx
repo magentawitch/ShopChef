@@ -1,12 +1,14 @@
 import React, { useState, useContext } from "react";
 import RecipeContext from "../../Context/RecipeContext";
 import RecipeTile from "../RecipeTile/RecipeTile";
+import RecipeCard from "../RecipeCard/RecipeCard";
 import styles from "./RecipeList.module.css";
 
 function RecipeList() {
     const { recipes, selectRecipe } = useContext(RecipeContext);
     const [clickedIndex, setClickedIndex] = useState("");
     const [isDisabled, setIsDisabled] = useState(false);
+    const [recipeCard, setRecipeCard] = useState(null);
 
 
     const handleClick = index => {
@@ -17,6 +19,10 @@ function RecipeList() {
             setClickedIndex(null);
             setIsDisabled(false);
         }, 1000)
+    }
+
+    const handleTitleClick = recipe => {
+        setRecipeCard(recipe);
     }
 
     return (
@@ -31,9 +37,11 @@ function RecipeList() {
                         isClicked={i === clickedIndex}
                         isDisabled={i === clickedIndex? isDisabled : false}
                         onClick={() => {handleClick(i)}}
+                        onTitleClicked={() => handleTitleClick(recipe)}
                     />
                 )}
             </div>
+            <RecipeCard recipe={recipeCard} onClose={() => setRecipeCard(null)} />
         </div>
     )
 }
