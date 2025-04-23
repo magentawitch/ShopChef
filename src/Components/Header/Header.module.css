@@ -1,15 +1,20 @@
-.logo {
-    font-family: "Cormorant Garamond";
-    font-weight: 600;
-    color: #435A47;
-    text-shadow: 1px 1px 2px #1d311e;
-    padding: 1rem;
-  }
+  /* HEADER */  
   
+  .logoContainer {
+    display: block;
+    width: 22.5rem;
+  }
+
+  .imgLogo {
+    display: block;
+    width: 100%;
+  }
+
   .header {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin: .5rem;
   }
 

@@ -4,7 +4,9 @@ import styles from "./Header.module.css";
 function Header() {
     return (
         <div className={styles.header}>
-            <h1 className={styles.logo}>ShopChef</h1>
+            <div className={styles.logoContainer}>
+                <img className={styles.imgLogo} src="public/logo light.svg" />
+            </div>
         </div>
     )
 }
