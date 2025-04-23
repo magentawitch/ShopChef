@@ -37,6 +37,7 @@ function ShoppingList() {
 
 
     return (
+        <div className={styles.mainContainer} >
         <div className={styles.ingredientListContainer}>
             <div className={styles.ingredientItemContainer}>
                 {ingredientsToBuy.length === 0 ? (
@@ -57,6 +58,7 @@ function ShoppingList() {
                         ))}
                     </ul>)}
             </div>
+        </div>
         </div>
     )
 }

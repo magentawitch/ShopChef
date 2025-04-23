@@ -1,4 +1,4 @@
-/* Batch Cooking List */
+/* BATCH COOKING LIST */
 
 .mainContainer {
     width: auto;
@@ -7,7 +7,7 @@
     margin: auto;
     background-color: #fffefc;
     border: 2px dashed #d6cfc4;
-    border-radius: 1.5rem;
+    border-radius: 2rem;
     box-shadow: 0 4px 8px rgba(211, 204, 192, 0.3);
 }
 
@@ -20,8 +20,8 @@
     scrollbar-width: thin;
     scrollbar-color: #D7BBAE #ffffff00;
     padding: 1rem;
-    width: 650px;
-    height: 500px;
+    width: 22.5rem;
+    height: 12.5rem;
 }
 
 .recipe {
@@ -40,3 +40,25 @@
     margin-top: 2rem;
     opacity: 0.8;
 }
+
+/* Media Query */
+
+@media only screen and (min-width: 750px) {
+    .recipesContainer {
+        width: 40.625rem;
+        height: 12.5rem;
+    }
+  }
+
+@media only screen and (min-width: 860px) {
+    .recipesContainer {
+        width: 22.5rem;
+        height: 31.25rem;
+    }
+  }
+
+@media only screen and (min-width: 1400px) {
+    .recipesContainer {
+        width: 41.75rem;
+    }
+  }

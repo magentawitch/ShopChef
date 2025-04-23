@@ -1,15 +1,26 @@
-/* Shopping List */
+/* SHOPPING LIST */
+
+.mainContainer {
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    margin: auto;
+    background-color: #fffefc;
+    border: 2px dashed #d6cfc4;
+    border-radius: 2rem;
+    box-shadow: 0 4px 8px rgba(211, 204, 192, 0.3);
+}
 
 .ingredientListContainer {
-    background-color: #fffefb;
-    border-radius: 2rem;
-    padding: 1rem 2rem;
-    border: 2px dashed #d6cfc4;
-    box-shadow: 0 4px 10px #0000000d;
-    width: 500px;
-    height: 500px;
-    margin: auto;
     font-family: 'Nunito', sans-serif;
+    padding: 1rem 2rem;
+    width: 20.5rem;
+    height: 12.5rem;
+    margin: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #D7BBAE #ffffff00;
 }
 
 .emptyText {
@@ -29,7 +40,7 @@
 
 .ingredient {
     border-bottom: 1px dashed #d9e3d5;
-    padding: 0.75rem 0;
+    padding: 0.75rem;
     font-size: 1rem;
     color: #3D4F3A;
     display: flex;
@@ -61,12 +72,12 @@
 }
 
 
-.hiddenCheckbox:checked + .styledCheckbox {
+.hiddenCheckbox:checked+.styledCheckbox {
     background-color: #90a88f;
     border-color: #6e8e6e;
 }
 
-.hiddenCheckbox:checked + .styledCheckbox::after {
+.hiddenCheckbox:checked+.styledCheckbox::after {
     content: "";
     position: absolute;
     left: 0.25rem;
@@ -76,4 +87,26 @@
     border: solid white;
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
+}
+
+/* Media Query */
+
+@media only screen and (min-width: 750px) {
+    .ingredientListContainer {
+        width: 38.625rem;
+        height: 12.5rem;
+    }
+}
+
+@media only screen and (min-width: 860px) {
+    .ingredientListContainer {
+        width: 20.5rem;
+        height: 31.25rem;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .ingredientListContainer {
+        width: 31.25rem;
+    }
 }
