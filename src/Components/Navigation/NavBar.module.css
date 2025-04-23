@@ -1,9 +1,9 @@
-/* NavBar */
+/* NAVBAR */
 
 .nav {
     background-color: #ffffff;
     padding: 1.25rem 0;
-    width: 60%;
+    width: 95%;
     margin: 0 auto;
     border-radius: 2rem;
     box-shadow: 0 3px 8px #00000012;
@@ -54,3 +54,24 @@
   .navList a.active {
     color: #8DAA91;
   }
+
+  /* Media Query */
+
+@media only screen and (min-width: 600px) {
+  .nav {
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .nav {
+    width: 75%;
+  }
+}
+
+@media only screen and (min-width: 860px) {
+  .nav {
+    width: 60%;
+  }
+}
+
