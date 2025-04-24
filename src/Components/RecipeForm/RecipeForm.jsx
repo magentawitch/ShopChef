@@ -7,22 +7,69 @@ function RecipeForm() {
     const { addRecipe, addIngredient, ingredientsList } = useContext(RecipeContext);
     const [title, setTitle] = useState("");
 
-    const [ingredientName, setIngredientName] = useState("");
-    const [ingredientAmount, setIngredientAmount] = useState("");
-    const [ingredientUnit, setIngredientUnit] = useState("");
+    const [ingredientInput, setIngredientInput] = useState("");
+    const [error, setError] = useState("");
 
     const [instructions, setInstructions] = useState(""); 
 
-    const handleKeyDown = event => {
-        if (event.key === "Enter") {
-            event.preventDefault()
-            if (ingredientName.trim() !== "" && ingredientAmount.trim() !== "")
-                addIngredient({ name: ingredientName.toLowerCase(), amount: ingredientAmount, unit: ingredientUnit });
-            setIngredientName("");
-            setIngredientAmount("");
-            setIngredientUnit("");
+    const normalizeUnit = (unit) => {
+        const map = {
+            tablespoon: "tbsp",
+            tablespoons: "tbsp",
+            tbsp: "tbsp",
+            teaspoon: "tsp",
+            teaspoons: "tsp",
+            tsp: "tsp",
+            cup: "cups",
+            cups: "cups",
+            unit: "u.",
+            units: "u.",
+            gr: "gr",
+            grs: "gr",
+            gram: "gr",
+            grams: "gr",
+            kg: "kg",
+            kgs: "kg",
+            kilogram: "kg",
+            kilograms: "kg",
+            l: "l",
+            ls: "l",
+            liter: "l",
+            liters: "l",
+            ml: "ml",
+            mls: "ml",
+            milliliter: "ml",
+            milliliters: "ml",
+        };
+        const normalized = unit?.toLowerCase().trim();
+        return map[normalized] || normalized;
+    };
+
+
+    const parseIngredient = (input) => {
+        const regex = /^(\d+(?:[.,]\d+)?)(?:\s+(\w+))?(?:\s+of)?\s+(.*)$/i;
+        const match = input.match(regex);
+        if (match) {
+            const [, amount, unitRaw = "unit", name] = match;
+            const unit = normalizeUnit(unitRaw);
+            return { amount, unit, name: name.toLowerCase() };
         }
-    }
+        return null;
+    };
+
+    const handleSubmitIngredient = (event) => {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            const parsed = parseIngredient(ingredientInput);
+            if (parsed) {
+                addIngredient(parsed);
+                setIngredientInput("");
+                setError("");
+            } else {
+                setError("Please write the ingredient using the format 'Amount Unit Ingredient'");
+            }
+        }
+    };
 
     const handleClick = () => {
         addRecipe(title, ingredientsList, instructions);
@@ -35,20 +82,20 @@ function RecipeForm() {
         <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
             <input className={styles.input} type="text" placeholder="Recipe Name" value={title} onChange={({ target }) => setTitle(target.value)} />
             <div className={styles.ingredient}>
-                <input className={styles.inputNumber} type="text" placeholder="2" value={ingredientAmount} onChange={({ target }) => setIngredientAmount(target.value)} />
-                <select className={styles.inputSelect} value={ingredientUnit} onChange={({ target }) => setIngredientUnit(target.value)} required >
-                    <option value="" disabled selected hidden>Choose</option>
-                    <option value="units">Units</option>
-                    <option value="cups">Cups</option>
-                    <option value="tsp">Tsp</option>
-                    <option value="tbsp">Tbsp</option>
-                    <option value="gr">Gr</option>
-                    <option value="Kg">Kg</option>
-                </select>
-                <input className={styles.input} type="text" placeholder="Ingredients" value={ingredientName} onChange={({ target }) => setIngredientName(target.value)} onKeyDown={handleKeyDown} />
+                <input
+                    className={styles.input}
+                    type="text"
+                    placeholder="e.g. 1 units tomato"
+                    value={ingredientInput}
+                    onChange={({ target }) => setIngredientInput(target.value)}
+                    onKeyDown={handleSubmitIngredient}
+                />
+                <button className={styles.addButton} onClick={handleSubmitIngredient}>+</button>
             </div>
 
-            <div>
+            {error && <p className={styles.error}>{error}</p>}
+
+            <div className={styles.ingredientsContainer}>
                 {ingredientsList.map((ingredient, i) =>
                     <Ingredient
                         key={i}

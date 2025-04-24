@@ -35,25 +35,21 @@
     flex: 1 1 0;
   }
 
-  .inputNumber {
-    width: 2.1875rem;
-    text-align: center;
-  }
-
-  .inputSelect {
-    width: 6.25rem;
-  }
-  
-  .input:focus, 
-  .inputNumber:focus, 
-  .inputSelect:focus {
+  .input:focus {
     outline: none;
     border-color: #D7BBAE;
     box-shadow: 0 0 0 2px #e7d7cc88;
   }
 
-  .inputSelect:invalid {
-    color: #757575;
+  .addButton {
+    margin: .5rem;
+  }
+
+  .ingredientsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
   }
 
   .textArea {
@@ -72,6 +68,12 @@
     outline: none;
     border-color: #D7BBAE;
     box-shadow: 0 0 0 2px #e7d7cc88;
+  }
+
+  .error {
+    color: #c85d5d;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
   }
   
   .submitButton {
