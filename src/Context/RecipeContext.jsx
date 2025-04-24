@@ -7,11 +7,16 @@ export const RecipeProvider = ({ children }) => {
         const storedRecipes = localStorage.getItem("recipes");
         return storedRecipes ? JSON.parse(storedRecipes) : [];
     });
-    const [selectedRecipes, setSelectedRecipes] = useState([]);
+    
+    const [selectedRecipes, setSelectedRecipes] = useState(() => {
+        const storedSelectedRecipes = localStorage.getItem("selectedRecipes");
+        return storedSelectedRecipes ? JSON.parse(storedSelectedRecipes) : [];
+    });
+    
     const [ingredientsList, setIngredientsList] = useState([]);
 
     useEffect(() => {
-        console.log(`These are the selected Recipes: ${selectedRecipes}`);
+        localStorage.setItem("selectedRecipes", JSON.stringify(selectedRecipes));
     }, [selectedRecipes])
 
     useEffect(() => {

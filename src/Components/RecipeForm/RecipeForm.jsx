@@ -58,7 +58,7 @@ function RecipeForm() {
     };
 
     const handleSubmitIngredient = (event) => {
-        if (event.key === "Enter") {
+        if (event.type === "click" || (event.type === "keydown" && event.key === "Enter")) {
             event.preventDefault();
             const parsed = parseIngredient(ingredientInput);
             if (parsed) {
