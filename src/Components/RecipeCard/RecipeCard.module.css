@@ -20,8 +20,7 @@
     box-shadow: 0 .25rem 1.25rem #0000001a;
     border: 1px solid #e6e0d7;
     padding: 2rem;
-    max-width: 90%;
-    width: 25rem;
+    max-width: 70%;
     font-family: "Open Sans", sans-serif;
     position: relative;
     animation: fadeInCard 200ms ease-in-out;
@@ -83,3 +82,12 @@
       opacity: 1;
     }
   }
+
+  /* Media Query */
+
+@media only screen and (min-width: 500px) {
+  .recipeCardContainer {
+    max-width: 90%;
+    width: 25rem;
+  }
+}
