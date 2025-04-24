@@ -5,6 +5,14 @@ import styles from "./ShoppingList.module.css";
 function ShoppingList() {
     const { selectedRecipes } = useContext(RecipeContext);
     const [ingredientsToBuy, setIngredientsToBuy] = useState([]);
+    const [checkedItems, setCheckedItems] = useState(() => {
+        const storedCheckedItems = localStorage.getItem("checkedItems");
+        return storedCheckedItems ? JSON.parse(storedCheckedItems) : {};
+    });
+
+    useEffect(() => {
+        localStorage.setItem('checkedItems', JSON.stringify(checkedItems));
+    }, [checkedItems]);
 
     useEffect(() => {
         updateShoppingList();
@@ -35,30 +43,39 @@ function ShoppingList() {
         setIngredientsToBuy(updatedList);
     }
 
+    const handleCheckboxChange = (name) => {
+        setCheckedItems(prev => ({
+            ...prev,
+            [name]: !prev[name]
+        }));
+    };
+
 
     return (
         <div className={styles.mainContainer} >
-        <div className={styles.ingredientListContainer}>
-            <div className={styles.ingredientItemContainer}>
-                {ingredientsToBuy.length === 0 ? (
-                    <p className={styles.emptyText}>Your shopping list is empty ✨</p>
-                ) : (
-                    <ul>
-                        {ingredientsToBuy.map((ingredient, i) => (
-                            <li key={i} className={styles.ingredient}>
-                                <label className={styles.customCheckbox}>
-                                    <input
-                                        type="checkbox"
-                                        className={styles.hiddenCheckbox}
-                                    />
-                                    <span className={styles.styledCheckbox}></span>
-                                    {ingredient.amount} {ingredient.unit} {ingredient.name}
-                                </label>
-                            </li>
-                        ))}
-                    </ul>)}
+            <div className={styles.ingredientListContainer}>
+                <div className={styles.ingredientItemContainer}>
+                    {ingredientsToBuy.length === 0 ? (
+                        <p className={styles.emptyText}>Your shopping list is empty ✨</p>
+                    ) : (
+                        <ul>
+                            {ingredientsToBuy.map((ingredient, i) => (
+                                <li key={i} className={styles.ingredient}>
+                                    <label className={styles.customCheckbox}>
+                                        <input
+                                            type="checkbox"
+                                            className={styles.hiddenCheckbox}
+                                            checked={checkedItems[ingredient.name] || false}
+                                            onChange={() => handleCheckboxChange(ingredient.name)}
+                                        />
+                                        <span className={styles.styledCheckbox}></span>
+                                        {ingredient.amount} {ingredient.unit} {ingredient.name}
+                                    </label>
+                                </li>
+                            ))}
+                        </ul>)}
+                </div>
             </div>
-        </div>
         </div>
     )
 }
