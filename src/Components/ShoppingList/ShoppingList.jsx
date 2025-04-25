@@ -43,10 +43,15 @@ function ShoppingList() {
         setIngredientsToBuy(updatedList);
     }
 
-    const handleCheckboxChange = (name) => {
+    const getIngredientKey = (ingredient) => {
+        return `${ingredient.name}-${ingredient.unit}`;
+    }
+
+    const handleCheckboxChange = (ingredient) => {
+        const key = getIngredientKey(ingredient);
         setCheckedItems(prev => ({
             ...prev,
-            [name]: !prev[name]
+            [key]: !prev[key]
         }));
     };
 
@@ -65,8 +70,8 @@ function ShoppingList() {
                                         <input
                                             type="checkbox"
                                             className={styles.hiddenCheckbox}
-                                            checked={checkedItems[ingredient.name] || false}
-                                            onChange={() => handleCheckboxChange(ingredient.name)}
+                                            checked={checkedItems[getIngredientKey(ingredient)] || false}
+                                            onChange={() => handleCheckboxChange(ingredient)}
                                         />
                                         <span className={styles.styledCheckbox}></span>
                                         {ingredient.amount} {ingredient.unit} {ingredient.name}
