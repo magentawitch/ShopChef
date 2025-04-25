@@ -24,7 +24,8 @@ export const RecipeProvider = ({ children }) => {
     }, [recipes]);
 
     const addRecipe = (title, ingredients, instructions) => {
-        setRecipes((prev) => [...prev, { title: title, ingredients: ingredients, instructions: instructions }]);
+        const uniqueId = self.crypto.randomUUID();
+        setRecipes((prev) => [...prev, { id: uniqueId, title: title, ingredients: ingredients, instructions: instructions }]);
         setIngredientsList([]);
     }
 
