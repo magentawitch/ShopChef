@@ -5,10 +5,11 @@ import RecipeCard from "../RecipeCard/RecipeCard";
 import styles from "./RecipeList.module.css";
 
 function RecipeList() {
-    const { recipes, selectRecipe } = useContext(RecipeContext);
+    const { recipes, selectRecipe, deleteRecipe } = useContext(RecipeContext);
     const [clickedIndex, setClickedIndex] = useState("");
     const [isDisabled, setIsDisabled] = useState(false);
     const [recipeCard, setRecipeCard] = useState(null);
+    const [recipeCardId, setRecipeCardId] = useState(null);
 
 
     const handleClick = index => {
@@ -21,8 +22,15 @@ function RecipeList() {
         }, 1000)
     }
 
-    const handleTitleClick = recipe => {
+    const handleTitleClick = (recipe) => {
         setRecipeCard(recipe);
+        setRecipeCardId(recipe.id);
+    }
+
+    const handleDelete = id => {
+        deleteRecipe(id);
+        setRecipeCard(null);
+        setRecipeCardId(null);
     }
 
     return (
@@ -41,7 +49,11 @@ function RecipeList() {
                     />
                 )}
             </div>
-            <RecipeCard recipe={recipeCard} onClose={() => setRecipeCard(null)} />
+                <RecipeCard 
+                recipe={recipeCard}
+                deleteButton={true}
+                onClose={() => {setRecipeCard(null); setRecipeCardId(null)}} 
+                onDelete={() => {handleDelete(recipeCardId)}} />
         </div>
     )
 }

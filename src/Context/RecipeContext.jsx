@@ -46,8 +46,13 @@ export const RecipeProvider = ({ children }) => {
         setSelectedRecipes((prev) => prev.filter((_, i) => i !== indexToRemove));
     }
 
+    const deleteRecipe = idToRemove => {
+        setRecipes((prev) => prev.filter((recipe) => recipe.id !== idToRemove));
+        setSelectedRecipes((prev) => prev.filter((recipe) => recipe.id !== idToRemove));
+    }
+
     return (
-        <RecipeContext.Provider value={{ recipes, addRecipe, ingredientsList, addIngredient, removeIngredient, selectedRecipes, selectRecipe, removeRecipe }}>
+        <RecipeContext.Provider value={{ recipes, addRecipe, ingredientsList, addIngredient, removeIngredient, selectedRecipes, selectRecipe, removeRecipe, deleteRecipe }}>
             {children}
         </RecipeContext.Provider>
     );
