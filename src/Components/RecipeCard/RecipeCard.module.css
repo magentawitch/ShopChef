@@ -23,6 +23,7 @@
     border: 1px solid #e6e0d7;
     padding: 2rem;
     max-width: 70%;
+    width: 25rem;
     font-family: "Open Sans", sans-serif;
     position: relative;
     animation: fadeInCard 200ms ease-in-out;
@@ -95,6 +96,5 @@
 @media only screen and (min-width: 500px) {
   .recipeCardContainer {
     max-width: 90%;
-    width: 25rem;
   }
 }
