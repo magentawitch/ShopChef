@@ -5,7 +5,7 @@ function Header() {
     return (
         <div className={styles.header}>
             <div className={styles.logoContainer}>
-                <img className={styles.imgLogo} src="public/logo light.svg" />
+                <img className={styles.imgLogo} src="/logo light.svg" />
             </div>
         </div>
     )
