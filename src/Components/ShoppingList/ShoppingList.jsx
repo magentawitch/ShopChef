@@ -38,10 +38,21 @@ function ShoppingList() {
                     })
                 }
             })
-        })
+            
+        });
 
         setIngredientsToBuy(updatedList);
-    }
+
+        setCheckedItems(prevChecked => {
+            const newChecked = {};
+            updatedList.forEach(ingredient => {
+                const key = getIngredientKey(ingredient);
+                newChecked[key] = prevChecked[key] || false;
+            });
+            return newChecked;
+        });
+
+    };
 
     const getIngredientKey = (ingredient) => {
         return `${ingredient.name}-${ingredient.unit}`;
