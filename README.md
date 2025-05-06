@@ -1,8 +1,42 @@
-# React + Vite
+# Batch Cooking Planner 🥕📋
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and cozy web app for planning weekly batch cooking recipes. It lets you plan your week’s recipes and automatically generates a shopping list based on your selections.
 
-Currently, two official plugins are available:
+### 💡 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✅ Add and remove recipes
+- ✅ Parse ingredients written as free text (e.g., "1 tbsp olive oil")
+- ✅ Automatically groups and sums ingredients for your shopping list
+- ✅ Check off ingredients as you shop (saved locally)
+- ✅ Responsive UI with a scrapbook-inspired look
+
+### 🛠️ Tech Stack
+
+- React
+- CSS Modules
+- Context API
+- Vite
+- Jest + React Testing Library
+
+---
+
+### 🔮 Planned Features
+
+- [ ] Add recipes using + / - buttons
+- [ ] Edit recipes after adding them
+- [ ] Convert units (e.g., cups to grams)
+- [ ] Use an LLM to suggest recipes based on your pantry
+- [ ] Use an LLM to parse full-text recipes into structured ingredients
+- [ ] Filter recipes by ingredients
+- [ ] Save and view previous weekly batch cooking plans (history)
+- [ ] Assign meals to specific days (e.g., lunch/dinner) and track that in history
+
+---
+
+### 📦 How to Run Locally
+
+```bash
+npm install
+npm run dev
+```
+
