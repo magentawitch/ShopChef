@@ -13,6 +13,7 @@ A simple and cozy web app for planning weekly batch cooking recipes. It lets you
 ### 🛠️ Tech Stack
 
 - React
+- Javascript
 - CSS Modules
 - Context API
 - Vite
